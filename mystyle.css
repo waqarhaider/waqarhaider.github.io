@@ -1,74 +1,78 @@
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #000
+body {
+    background: #eee
 }
 
-.profile {
+.card {
+    border: none;
     position: relative;
-    width: 300px;
-    height: 350px;
-    background: url("https://i.imgur.com/wG51k7v.png");
-    background-size: cover;
-    cursor: pointer;
-    border: 12px;
-    border-top-right-radius: 35px !important;
-    border-radius: 6px
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer
 }
 
-.overlay {
-    width: 100%;
+.card:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 12px;
-    cursor: pointer;
-    opacity: 0;
-    transition: all 1s;
-    border-top-right-radius: 35px !important;
-    border-radius: 6px
+    background-color: #E1BEE7;
+    transform: scaleY(1);
+    transition: all 0.5s;
+    transform-origin: bottom
 }
 
-.profile:hover .overlay {
-    opacity: 1
+.card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #8E24AA;
+    transform: scaleY(0);
+    transition: all 0.5s;
+    transform-origin: bottom
 }
 
-.social-icons {
+.card:hover::after {
+    transform: scaleY(1)
+}
+
+.fonts {
+    font-size: 11px
+}
+
+.social-list {
     display: flex;
     list-style: none;
-    bottom: 10px;
-    position: absolute;
-    text-align: center;
     justify-content: center;
-    left: 22px
+    padding: 0
 }
 
-.social-icons li {
-    width: 25px;
-    height: 25px;
-    border: 1px solid #eee;
-    padding: 20px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.social-list li {
+    padding: 10px;
+    color: #8E24AA;
+    font-size: 19px
+}
+
+.buttons button:nth-child(1) {
+    border: 1px solid #8E24AA !important;
+    color: #8E24AA;
+    height: 40px
+}
+
+.buttons button:nth-child(1):hover {
+    border: 1px solid #8E24AA !important;
     color: #fff;
-    border-radius: 5px;
-    transition: all 1s
+    height: 40px;
+    background-color: #8E24AA
 }
 
-.social-icons li:hover {
-    background: #fff;
-    color: #000
-}
-
-.overlay .about {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    top: 40%;
+.buttons button:nth-child(2) {
+    border: 1px solid #8E24AA !important;
+    background-color: #8E24AA;
     color: #fff;
-    flex: column
+    height: 40px
 }
